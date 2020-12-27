@@ -213,7 +213,7 @@ namespace MyFirstBot
                     }
                     //bruh
                     top7 = "```" + top7 + "```";
-                    
+                    top7 = top7.Replace("asc\nasc", "asc\n");
                     if (topjson.Length < 7)
                     {
                         string topnum = "The current top " + (topjson.Length).ToString() + " in speed-demon are:\n";
