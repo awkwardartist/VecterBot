@@ -149,7 +149,7 @@ namespace MyFirstBot
                     {
                         string topnum = "The current top " + (topjson.Length).ToString() + " in harcore are:";
                         var embuilder = new DSharpPlus.Entities.DiscordEmbedBuilder();
-                        embuilder.AddField(topnum, "---------------------------------\n" + top7 + "---------------------------------\n");
+                        embuilder.AddField(topnum, top7);
                         var emb = embuilder.Build();
                         await e.Message.RespondAsync("", false, emb);
 
@@ -158,7 +158,7 @@ namespace MyFirstBot
                     {
                         string topnum = "The current top 7 in hardcore are:";
                         var embuilder = new DSharpPlus.Entities.DiscordEmbedBuilder();
-                        embuilder.AddField(topnum, "---------------------------------\n" + top7 + "---------------------------------\n");
+                        embuilder.AddField(topnum, top7);
                         var emb = embuilder.Build();
                         await e.Message.RespondAsync("", false, emb);
                     }
@@ -207,13 +207,12 @@ namespace MyFirstBot
                             string name = line.Substring(line.IndexOf("\"id\":"), line.IndexOf("\",\"registerdUserId") - line.IndexOf("\"id\":"));
                             name = name.Replace("\"id\":\"", "");
 
-                            top7 += "\nasc\n" + posNum + ".) " + name;
+                            top7 += posNum + ".) " + name;
 
                         }
                     }
                     //bruh
-                    top7 = "```" + top7 + "```";
-                    top7 = top7.Replace("asc\nasc", "asc\n");
+                    
                     if (topjson.Length < 7)
                     {
                         string topnum = "The current top " + (topjson.Length).ToString() + " in speed-demon are:\n";
@@ -228,7 +227,7 @@ namespace MyFirstBot
                     {
                         string topnum = "The current top 7 in speed-demon are:\n";
                         var embuilder = new DSharpPlus.Entities.DiscordEmbedBuilder();
-                        embuilder.AddField(topnum, "---------------------------------\n" + top7 + "---------------------------------\n");
+                        embuilder.AddField(topnum, top7);
                         var emb = embuilder.Build();
                         await e.Message.RespondAsync("", false, emb);
                     }
