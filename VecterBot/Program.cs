@@ -225,6 +225,7 @@ namespace MyFirstBot
                     {
                         string topnum = "The current top 7 in speed-demon are:\n";
                         var embuilder = new DSharpPlus.Entities.DiscordEmbedBuilder();
+                        top7 = "```" + top7 + "```";
                         embuilder.AddField(topnum, top7);
                         var emb = embuilder.Build();
                         await e.Message.RespondAsync("", false, emb);
@@ -244,9 +245,6 @@ namespace MyFirstBot
                     if (seed == "")
                     {
                         e.Message.RespondAsync("um, you forgot to specify a seed :)");
-
-
-
 
                     }
                     else
