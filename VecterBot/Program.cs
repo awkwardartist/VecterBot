@@ -18,7 +18,7 @@ namespace MyFirstBot
         static WebClient client = new WebClient();
         static DiscordClient discord = new DiscordClient(new DiscordConfiguration()
         {
-            Token = "NzkyNTIwOTkxNjMyNzg1NDQ4.X-e6sA.Xb9p5A47SDBTyzhn7ARVkEThifA",
+            Token = Environment.GetEnvironmentVariable("BOT_TOKEN"),
             TokenType = TokenType.Bot
         });
         static void Main(string[] args)
@@ -30,6 +30,9 @@ namespace MyFirstBot
             //called whenever message created
             discord.MessageCreated += async (e) =>
             {
+                
+
+
                 if (e.Message.Content == "/vb help")
                 {
                     await PrintHelp();
@@ -44,7 +47,7 @@ namespace MyFirstBot
                     string levelID = currentDay + currentMonth + currentYear;
 
                     //get data and make it look good
-                    var stream = client.DownloadString("https://vecterapi.azurewebsites.net/api/GetLeaderboard?ga=bdc2a3ee3d8dca378d6f13e216e033a4a2b098713a4e7f2fa1d7a20175efeea3&level=" + levelID + "&callback=?");
+                    var stream = client.DownloadString(Environment.GetEnvironmentVariable("APIURL") + levelID + "&callback=?");
                     stream = stream.Replace(",{\"position", ",\n{\"position");
                     File.WriteAllText(Directory.GetCurrentDirectory() + @"/topdog.json", stream);
 
