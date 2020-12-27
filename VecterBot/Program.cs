@@ -71,7 +71,7 @@ namespace MyFirstBot
                             string name = line.Substring(line.IndexOf("\"id\":"), line.IndexOf("\",\"registerdUserId") - line.IndexOf("\"id\":"));
                             name = name.Replace("\"id\":\"", "");
 
-                            top7 += posNum + ".) " + name + "\n";
+                            top7 += "asc\n" + posNum + ".) " + name + "\n";
 
                         }
 
@@ -136,7 +136,7 @@ namespace MyFirstBot
                             string name = line.Substring(line.IndexOf("\"id\":"), line.IndexOf("\",\"registerdUserId") - line.IndexOf("\"id\":"));
                             name = name.Replace("\"id\":\"", "");
 
-                            top7 += posNum + ".) " + name + "\n";
+                            top7 += "asc\n" + posNum + ".) " + name + "\n";
 
 
 
@@ -207,7 +207,7 @@ namespace MyFirstBot
                             string name = line.Substring(line.IndexOf("\"id\":"), line.IndexOf("\",\"registerdUserId") - line.IndexOf("\"id\":"));
                             name = name.Replace("\"id\":\"", "");
 
-                            top7 += posNum + ".) " + name + "\n";
+                            top7 += "asc\n" + posNum + ".) " + name + "\n";
 
                         }
                     }
@@ -280,7 +280,7 @@ namespace MyFirstBot
                                     string name = line.Substring(line.IndexOf("\"id\":"), line.IndexOf("\",\"registerdUserId") - line.IndexOf("\"id\":"));
                                     name = name.Replace("\"id\":\"", "");
 
-                                    top7 += posNum + ".) " + name + "\n";
+                                    top7 += "asc\n" + posNum + ".) " + name + "\n";
                                 }
 
                             }
