@@ -13,8 +13,7 @@ namespace MyFirstBot
 {
     class Program
     {
-        //info: my id: 683697713551769636
-        //tarans id: 293132462907850753
+        
         static WebClient client = new WebClient();
         static DiscordClient discord = new DiscordClient(new DiscordConfiguration()
         {
