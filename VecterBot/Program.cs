@@ -112,7 +112,7 @@ namespace MyFirstBot
                     string levelID = currentDay + currentMonth + currentYear;
 
                     //get data and make it look good
-                    var stream = client.DownloadString("https://vecterapi.azurewebsites.net/api/GetLeaderboard?ga=bdc2a3ee3d8dca378d6f13e216e033a4a2b098713a4e7f2fa1d7a20175efeea3&level=55" + levelID + "&callback=?");
+                    var stream = client.DownloadString(Environment.GetEnvironmentVariable("APIURL") +"55" + levelID + "&callback=?");
                     stream = stream.Replace(",{\"position", ",\n{\"position");
                     File.WriteAllText(Directory.GetCurrentDirectory() + @"/hardcore.json", stream);
 
@@ -180,7 +180,7 @@ namespace MyFirstBot
                     string levelID = currentDay + currentMonth + currentYear;
 
                     //get data and make it look good
-                    var stream = client.DownloadString("https://vecterapi.azurewebsites.net/api/GetLeaderboard?ga=bdc2a3ee3d8dca378d6f13e216e033a4a2b098713a4e7f2fa1d7a20175efeea3&level=77" + levelID + "&callback=?");
+                    var stream = client.DownloadString(Environment.GetEnvironmentVariable("APIURL") + "77" + levelID + "&callback=?");
                     stream = stream.Replace(",{\"position", ",\n{\"position");
                     File.WriteAllText(Directory.GetCurrentDirectory() + @"/speeddemon.json", stream);
 
@@ -253,7 +253,7 @@ namespace MyFirstBot
                     }
                     else
                     {
-                        var stream = client.DownloadString("https://vecterapi.azurewebsites.net/api/GetLeaderboard?ga=bdc2a3ee3d8dca378d6f13e216e033a4a2b098713a4e7f2fa1d7a20175efeea3&level=9" + seed + "&callback=?");
+                        var stream = client.DownloadString(Environment.GetEnvironmentVariable("APIURL") + "9" + seed + "&callback=?");
                         stream = stream.Replace(",{\"position", ",\n{\"position");
                         File.WriteAllText(Directory.GetCurrentDirectory() + @"/seed" + seed + ".json", stream);
                         Thread.Sleep(300);
