@@ -206,9 +206,7 @@ namespace MyFirstBot
 
                             string name = line.Substring(line.IndexOf("\"id\":"), line.IndexOf("\",\"registerdUserId") - line.IndexOf("\"id\":"));
                             name = name.Replace("\"id\":\"", "");
-
-                            top7 += posNum + ".) " + name;
-
+                            top7 += posNum + ".) " + name + "\n";
                         }
                     }
                     //bruh
