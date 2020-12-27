@@ -74,7 +74,7 @@ namespace MyFirstBot
                         }
 
                     }
-                    await e.Message.DeleteAsync();
+                    
                     if (topjson.Length < 7)
                     {
                         string topnum = "The current top " + (topjson.Length).ToString() + " in top dog are:";
@@ -142,7 +142,7 @@ namespace MyFirstBot
                         }
 
                     }
-                    await e.Message.DeleteAsync();
+                    
                     if (topjson.Length < 7)
                     {
                         string topnum = "The current top " + (topjson.Length).ToString() + " in harcore are:";
@@ -213,7 +213,7 @@ namespace MyFirstBot
                         }
 
                     }
-                    await e.Message.DeleteAsync();
+                    
                     if (topjson.Length < 7)
                     {
                         string topnum = "The current top " + (topjson.Length).ToString() + " in speed-demon are:\n";
