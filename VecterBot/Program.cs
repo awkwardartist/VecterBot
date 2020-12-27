@@ -185,7 +185,7 @@ namespace MyFirstBot
 
                     Thread.Sleep(300);
                     string[] topjson = File.ReadAllLines(Directory.GetCurrentDirectory() + @"/speeddemon.json");
-                    string top7 = "```";
+                    string top7 = "";
                     foreach (var line in topjson)
                     {
 
@@ -211,13 +211,13 @@ namespace MyFirstBot
 
                         }
                     }
-                    top7 += "```";
+                    
                     
                     if (topjson.Length < 7)
                     {
                         string topnum = "The current top " + (topjson.Length).ToString() + " in speed-demon are:\n";
                         var embuilder = new DSharpPlus.Entities.DiscordEmbedBuilder();
-                        embuilder.AddField(topnum, "---------------------------------\n" + top7 + "---------------------------------\n");
+                        embuilder.AddField(topnum, "```---------------------------------\n" + top7 + "---------------------------------\n```");
                         var emb = embuilder.Build();
                         await e.Message.RespondAsync("", false, emb);
 
