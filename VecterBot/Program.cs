@@ -211,6 +211,7 @@ namespace MyFirstBot
 
                         }
                     }
+                    //bruh
                     top7 = "```" + top7 + "```";
                     
                     if (topjson.Length < 7)
