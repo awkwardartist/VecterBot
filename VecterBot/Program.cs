@@ -185,7 +185,7 @@ namespace MyFirstBot
 
                     Thread.Sleep(300);
                     string[] topjson = File.ReadAllLines(Directory.GetCurrentDirectory() + @"/speeddemon.json");
-                    string top7 = "";
+                    string top7 = "```";
                     foreach (var line in topjson)
                     {
 
@@ -211,6 +211,7 @@ namespace MyFirstBot
 
                         }
                     }
+                    top7 += "```";
                     
                     if (topjson.Length < 7)
                     {
