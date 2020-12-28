@@ -29,9 +29,6 @@ namespace MyFirstBot
             //called whenever message created
             discord.MessageCreated += async (e) =>
             {
-                
-
-
                 if (e.Message.Content == "/vb help")
                 {
                     await PrintHelp();
@@ -55,8 +52,6 @@ namespace MyFirstBot
                     string top7 = "";
                     foreach (var line in topjson)
                     {
-
-
                         if (line.Contains("{\"position\":8"))
                         {
                             killproc = true;
@@ -117,7 +112,7 @@ namespace MyFirstBot
 
                     Thread.Sleep(300);
                     string[] topjson = File.ReadAllLines(Directory.GetCurrentDirectory() + @"/hardcore.json");
-                    string top7 = "";
+                    string top7 = "asc\n";
                     foreach (var line in topjson)
                     {
 
@@ -136,7 +131,7 @@ namespace MyFirstBot
                             string name = line.Substring(line.IndexOf("\"id\":"), line.IndexOf("\",\"registerdUserId") - line.IndexOf("\"id\":"));
                             name = name.Replace("\"id\":\"", "");
 
-                            top7 += "asc\n" + posNum + ".) " + name + "\n";
+                            top7 += posNum + ".) " + name + "\n";
 
 
 
@@ -144,20 +139,22 @@ namespace MyFirstBot
                         }
 
                     }
-                    
+
                     if (topjson.Length < 7)
                     {
-                        string topnum = "The current top " + (topjson.Length).ToString() + " in harcore are:";
+                        string topnum = "The current top " + (topjson.Length).ToString() + " in hardcore are:\n";
                         var embuilder = new DSharpPlus.Entities.DiscordEmbedBuilder();
                         embuilder.AddField(topnum, top7);
                         var emb = embuilder.Build();
                         await e.Message.RespondAsync("", false, emb);
 
+
                     }
                     else
                     {
-                        string topnum = "The current top 7 in hardcore are:";
+                        string topnum = "The current top 7 in hardcore are:\n";
                         var embuilder = new DSharpPlus.Entities.DiscordEmbedBuilder();
+                        top7 = "```" + top7 + "```";
                         embuilder.AddField(topnum, top7);
                         var emb = embuilder.Build();
                         await e.Message.RespondAsync("", false, emb);
@@ -185,7 +182,7 @@ namespace MyFirstBot
 
                     Thread.Sleep(300);
                     string[] topjson = File.ReadAllLines(Directory.GetCurrentDirectory() + @"/speeddemon.json");
-                    string top7 = "";
+                    string top7 = "asc\n";
                     foreach (var line in topjson)
                     {
 
