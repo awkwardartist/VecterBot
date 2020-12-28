@@ -8,7 +8,7 @@ using System;
 using DSharpPlus;
 using System.Globalization;
 
-
+//oh my god i hate github
 namespace MyFirstBot
 {
     class Program
