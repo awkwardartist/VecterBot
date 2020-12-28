@@ -77,7 +77,9 @@ namespace MyFirstBot
                     {
                         string topnum = "The current top " + (topjson.Length).ToString() + " in speed-demon are:\n";
                         var embuilder = new DSharpPlus.Entities.DiscordEmbedBuilder();
+                        top7 = "```" + top7 + "```";
                         embuilder.AddField(topnum, top7);
+
                         var emb = embuilder.Build();
                         await e.Message.RespondAsync("", false, emb);
 
@@ -142,6 +144,7 @@ namespace MyFirstBot
                     {
                         string topnum = "The current top " + (topjson.Length).ToString() + " in hardcore are:\n";
                         var embuilder = new DSharpPlus.Entities.DiscordEmbedBuilder();
+                        top7 = "```" + top7 + "```";
                         embuilder.AddField(topnum, top7);
                         var emb = embuilder.Build();
                         await e.Message.RespondAsync("", false, emb);
@@ -205,11 +208,12 @@ namespace MyFirstBot
                         }
                     }
                     //bruh
-                    
+
                     if (topjson.Length < 7)
                     {
                         string topnum = "The current top " + (topjson.Length).ToString() + " in speed-demon are:\n";
                         var embuilder = new DSharpPlus.Entities.DiscordEmbedBuilder();
+                        top7 = "```" + top7 + "```";
                         embuilder.AddField(topnum, top7);
                         var emb = embuilder.Build();
                         await e.Message.RespondAsync("", false, emb);
