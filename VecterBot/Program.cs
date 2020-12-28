@@ -49,7 +49,7 @@ namespace MyFirstBot
 
                     Thread.Sleep(300);
                     string[] topjson = File.ReadAllLines(Directory.GetCurrentDirectory() + @"/topdog.json");
-                    string top7 = "";
+                    string top7 = "asc\n";
                     foreach (var line in topjson)
                     {
                         if (line.Contains("{\"position\":8"))
@@ -66,33 +66,31 @@ namespace MyFirstBot
                             string name = line.Substring(line.IndexOf("\"id\":"), line.IndexOf("\",\"registerdUserId") - line.IndexOf("\"id\":"));
                             name = name.Replace("\"id\":\"", "");
 
-                            top7 += "asc\n" + posNum + ".) " + name + "\n";
+                            top7 += posNum + ".) " + name + "\n";
 
                         }
 
                     }
                     
+                    
                     if (topjson.Length < 7)
                     {
-                        string topnum = "The current top " + (topjson.Length).ToString() + " in top dog are:";
+                        string topnum = "The current top " + (topjson.Length).ToString() + " in speed-demon are:\n";
                         var embuilder = new DSharpPlus.Entities.DiscordEmbedBuilder();
-                        embuilder.AddField(topnum, "---------------------------------\n" + top7 + "---------------------------------\n");
+                        embuilder.AddField(topnum, top7);
                         var emb = embuilder.Build();
                         await e.Message.RespondAsync("", false, emb);
+
 
                     }
                     else
                     {
-                        string topnum = "The current top 7 in top dog are:";
+                        string topnum = "The current top 7 in speed-demon are:\n";
                         var embuilder = new DSharpPlus.Entities.DiscordEmbedBuilder();
-                        embuilder.AddField(topnum, "---------------------------------\n" + top7 + "---------------------------------\n");
+                        top7 = "```" + top7 + "```";
+                        embuilder.AddField(topnum, top7);
                         var emb = embuilder.Build();
                         await e.Message.RespondAsync("", false, emb);
-                    }
-                    Thread.Sleep(300);
-                    if (File.Exists(Directory.GetCurrentDirectory() + "/topdog.json"))
-                    {
-                        File.Delete(Directory.GetCurrentDirectory() + "/topdog.json");
                     }
 
                 }
