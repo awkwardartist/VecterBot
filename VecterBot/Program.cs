@@ -253,7 +253,7 @@ namespace MyFirstBot
                         File.WriteAllText(Directory.GetCurrentDirectory() + @"/seed" + seed + ".json", stream);
                         Thread.Sleep(300);
                         string[] topjson = File.ReadAllLines(Directory.GetCurrentDirectory() + @"/seed" + seed + ".json");
-                        string top7 = "";
+                        string top7 = "asc\n";
                         try
                         {
                             foreach (var line in topjson)
@@ -276,7 +276,7 @@ namespace MyFirstBot
                                     string name = line.Substring(line.IndexOf("\"id\":"), line.IndexOf("\",\"registerdUserId") - line.IndexOf("\"id\":"));
                                     name = name.Replace("\"id\":\"", "");
 
-                                    top7 += "asc\n" + posNum + ".) " + name + "\n";
+                                    top7 += posNum + ".) " + name + "\n";
                                 }
 
                             }
