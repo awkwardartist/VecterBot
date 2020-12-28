@@ -282,18 +282,21 @@ namespace MyFirstBot
                             }
                             if (topjson.Length < 7)
                             {
-                                
-                                string topnum = "The current top " + (topjson.Length).ToString() + " in your seed are:";
+                                string topnum = "The current top " + (topjson.Length).ToString() + " in your seed are:\n";
                                 var embuilder = new DSharpPlus.Entities.DiscordEmbedBuilder();
-                                embuilder.AddField(topnum, "---------------------------------\n" + top7 + "---------------------------------\n");
+                                top7 = "```" + top7 + "```";
+                                embuilder.AddField(topnum, top7);
                                 var emb = embuilder.Build();
                                 await e.Message.RespondAsync("", false, emb);
+
+
                             }
                             else
                             {
-                                string topnum = "The current top 7 in your seed are:";
+                                string topnum = "The current top 7 in your seed are:\n";
                                 var embuilder = new DSharpPlus.Entities.DiscordEmbedBuilder();
-                                embuilder.AddField(topnum, "---------------------------------\n" + top7 + "---------------------------------\n");
+                                top7 = "```" + top7 + "```";
+                                embuilder.AddField(topnum, top7);
                                 var emb = embuilder.Build();
                                 await e.Message.RespondAsync("", false, emb);
                             }
@@ -313,7 +316,7 @@ namespace MyFirstBot
                     async Task PrintHelp()
                     {
                         var help = new DSharpPlus.Entities.DiscordEmbedBuilder();
-                        help.AddField("Available Commands:", "all commands start with \"/vb\"\n---------------------------------\n/vb help\n/vb topdog\n/vb hardcore\n/vb speeddemon\n/vb seed [ your seed ]\n---------------------------------");
+                        help.AddField("Available Commands:", "all commands start with \"/vb\"\n\n```/vb help\n/vb topdog\n/vb hardcore\n/vb speeddemon\n/vb seed [ your seed ]\n```");
                         var helpEm = help.Build();
                         await e.Message.RespondAsync("", false, helpEm);
                     }
