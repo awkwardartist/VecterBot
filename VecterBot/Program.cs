@@ -75,7 +75,7 @@ namespace MyFirstBot
                     
                     if (topjson.Length < 7)
                     {
-                        string topnum = "The current top " + (topjson.Length).ToString() + " in speed-demon are:\n";
+                        string topnum = "The current top " + (topjson.Length).ToString() + " in top dog are:\n";
                         var embuilder = new DSharpPlus.Entities.DiscordEmbedBuilder();
                         top7 = "```" + top7 + "```";
                         embuilder.AddField(topnum, top7);
@@ -87,7 +87,7 @@ namespace MyFirstBot
                     }
                     else
                     {
-                        string topnum = "The current top 7 in speed-demon are:\n";
+                        string topnum = "The current top 7 in top dog are:\n";
                         var embuilder = new DSharpPlus.Entities.DiscordEmbedBuilder();
                         top7 = "```" + top7 + "```";
                         embuilder.AddField(topnum, top7);
