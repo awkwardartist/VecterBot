@@ -40,7 +40,7 @@ namespace MyFirstBot
                     string currentDay = DateTime.Now.Day.ToString();
                     string currentMonth = DateTime.Now.Month.ToString();
                     string currentYear = DateTime.Now.Year.ToString();
-                    string levelID = currentDay + currentMonth + currentYear;
+                    string levelID = DateTime.UtcNow.ToString("dmmyyyy");
 
                     //get data and make it look good
                     var stream = client.DownloadString(Environment.GetEnvironmentVariable("APIURL") + levelID + "&callback=?");
@@ -103,7 +103,7 @@ namespace MyFirstBot
                     string currentDay = DateTime.Now.Day.ToString();
                     string currentMonth = DateTime.Now.Month.ToString();
                     string currentYear = DateTime.Now.Year.ToString();
-                    string levelID = currentDay + currentMonth + currentYear;
+                    string levelID = DateTime.UtcNow.ToString("dmmyyyy");
 
                     //get data and make it look good
                     var stream = client.DownloadString(Environment.GetEnvironmentVariable("APIURL") +"55" + levelID + "&callback=?");
@@ -174,7 +174,7 @@ namespace MyFirstBot
                     string currentDay = DateTime.Now.Day.ToString();
                     string currentMonth = DateTime.Now.Month.ToString();
                     string currentYear = DateTime.Now.Year.ToString();
-                    string levelID = currentDay + currentMonth + currentYear;
+                    string levelID = DateTime.UtcNow.ToString("dmmyyyy");
 
                     //get data and make it look good
                     var stream = client.DownloadString(Environment.GetEnvironmentVariable("APIURL") + "77" + levelID + "&callback=?");
